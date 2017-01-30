@@ -8,7 +8,7 @@
     <script>hljs.initHighlightingOnLoad();</script>
     <script>
         function process() {
-            document.getElementById('result').innerText = unescape(escaped.value);
+            document.getElementById('result').innerText = unescape(escaped.value.replace(/['"]+/g, ''));
             hljs.highlightBlock(document.getElementById('result'));
         }
     </script>
@@ -16,10 +16,12 @@
 <body class="hljs" style="font-family: monospace">
     <div style="display: flex; justify-content: center;">
         <p>
-            <span class="hljs-symbol">unescape</span>
-            <span class="hljs-keyword">('</span></p>
-        <textarea id='escaped' rows=5 oninput="process()" class="hljs" style="flex: 1"></textarea>
-        <p><span class="hljs-keyword">');</span></p>
+            <span class="hljs-tag">unescape(</span><span class="hljs-keyword">'</span>
+        </p>
+        <textarea id='escaped' rows='5' oninput="process()" class="hljs" style="flex: 1"></textarea>
+        <p>
+            <span class="hljs-keyword">'</span><span class="hljs-tag">);</span>
+        </p>
     </div>
     <pre><code  id="result"></code></pre>
 </body>
