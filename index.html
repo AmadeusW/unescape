@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Unescape</title>
+</head>
+<body>
+<p>unescape('</p>
+<textarea id='escaped' rows=5 oninput="unescape()" />
+<p>');</p>
+<div id='result'> </div>
+</body>
+<script>
+    function unescape() {
+        document.getElementById('result').innerText = unescape(escaped.value);
+    }
+</script>
+</html>
